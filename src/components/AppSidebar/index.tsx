@@ -3,10 +3,8 @@
 import {
   Sidebar,
   SidebarContent,
-  SidebarFooter,
   SidebarGroup,
   SidebarGroupContent,
-  SidebarHeader,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
@@ -79,8 +77,7 @@ export function AppSidebar() {
   const isParentActive = (parentPath: string) => pathname.startsWith(parentPath) && parentPath !== pathname;
 
   return (
-    <Sidebar collapsible="icon">
-      <SidebarHeader />
+    <Sidebar collapsible="icon" variant="sidebar">
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupContent>
@@ -92,6 +89,7 @@ export function AppSidebar() {
                     isActive={item.submenus ? isParentActive(item.url) : isActive(item.url)}
                     asChild={!Boolean(item.submenus)}
                     onClick={() => (item.submenus ? router.push(item.submenus[0].url) : router.push(item.url))}
+                    tooltip={item.title}
                   >
                     {item.submenus ? (
                       <>
@@ -130,7 +128,6 @@ export function AppSidebar() {
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
-      <SidebarFooter />
     </Sidebar>
   );
 }

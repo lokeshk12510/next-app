@@ -4,6 +4,7 @@ import ReportHistoryIcon from '@/assets/icons/report-history.svg';
 import ReportsIcon from '@/assets/icons/reports.svg';
 import SchedulerIcon from '@/assets/icons/scheduler.svg';
 import GenerateReportIcon from '@/assets/icons/generate-report.svg';
+import ProfileIcon from '@/assets/icons/profile.svg'
 
 export const ICONS = {
   dashboard: DashboardIcon,
@@ -12,4 +13,5 @@ export const ICONS = {
   scheduler: SchedulerIcon,
   generateReport: GenerateReportIcon,
   reportHistory: ReportHistoryIcon,
+  profile:ProfileIcon
 } as const;
