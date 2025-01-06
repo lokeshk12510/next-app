@@ -74,7 +74,8 @@ export function AppSidebar() {
   const router = useRouter();
 
   const isActive = (path: string) => pathname === path;
-  const isParentActive = (parentPath: string) => pathname.startsWith(parentPath) && parentPath !== pathname;
+  const isParentActive = (parentPath: string) =>
+    pathname.startsWith(parentPath) && parentPath !== pathname;
 
   return (
     <Sidebar collapsible="icon" variant="sidebar">
@@ -85,10 +86,12 @@ export function AppSidebar() {
               {items.map(item => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton
-                    className="h-11 gap-2.5 rounded-sm px-4 hover:bg-transparent hover:text-white active:bg-transparent active:text-white group-data-[collapsible=icon]:!size-11 group-data-[collapsible=icon]:justify-center"
+                    className="h-11 gap-2.5 rounded-sm px-4 hover:bg-primary-dark hover:text-white active:bg-transparent active:text-white data-[active=true]:shadow-md group-data-[collapsible=icon]:!size-11 group-data-[collapsible=icon]:justify-center"
                     isActive={item.submenus ? isParentActive(item.url) : isActive(item.url)}
                     asChild={!Boolean(item.submenus)}
-                    onClick={() => (item.submenus ? router.push(item.submenus[0].url) : router.push(item.url))}
+                    onClick={() =>
+                      item.submenus ? router.push(item.submenus[0].url) : router.push(item.url)
+                    }
                     tooltip={item.title}
                   >
                     {item.submenus ? (
@@ -96,14 +99,18 @@ export function AppSidebar() {
                         <div className="size-5 max-w-7 group-data-[collapsible=icon]:size-full">
                           <item.icon />
                         </div>
-                        <span className="text-base uppercase group-data-[collapsible=icon]:hidden">{item.title}</span>
+                        <span className="text-base uppercase group-data-[collapsible=icon]:hidden">
+                          {item.title}
+                        </span>
                       </>
                     ) : (
                       <Link href={item.url}>
                         <div className="size-5 max-w-7 group-data-[collapsible=icon]:size-full">
                           <item.icon />
                         </div>
-                        <span className="text-base uppercase group-data-[collapsible=icon]:hidden">{item.title}</span>
+                        <span className="text-base uppercase group-data-[collapsible=icon]:hidden">
+                          {item.title}
+                        </span>
                       </Link>
                     )}
                   </SidebarMenuButton>
@@ -114,7 +121,7 @@ export function AppSidebar() {
                           <SidebarMenuSubButton
                             isActive={isActive(submenu.url)}
                             onClick={() => router.push(submenu.url)}
-                            className="data-[active=true]:bg-primary-dark pointer-events-auto h-11 cursor-pointer rounded-sm bg-transparent px-8 before:absolute before:left-3 before:w-2 before:rounded-full before:bg-white hover:bg-transparent hover:text-white active:bg-transparent active:text-white data-[active=true]:font-semibold data-[active=true]:text-white data-[active=true]:before:h-2"
+                            className="pointer-events-auto h-11 cursor-pointer rounded-sm bg-transparent px-8 before:absolute before:left-3 before:w-2 before:rounded-full before:bg-white hover:bg-primary-dark hover:text-white active:bg-transparent active:text-white data-[active=true]:bg-primary-dark data-[active=true]:font-semibold data-[active=true]:text-white data-[active=true]:before:h-2"
                           >
                             <span className="text-base uppercase">{submenu.title}</span>
                           </SidebarMenuSubButton>

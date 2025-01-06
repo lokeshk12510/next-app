@@ -1,7 +1,8 @@
-import Head from 'next/head';
 import '@/styles/globalStyles.css';
 
-// /app/layout.tsx
+import Head from 'next/head';
+import { ThemeProvider } from '@/components/ThemeProvider';
+
 export const metadata = {
   title: 'My App',
   description: 'An amazing application built with Next.js',
@@ -13,7 +14,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <Head>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <body>{children}</body>
+      <body>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }

@@ -18,7 +18,7 @@ const Header = () => {
         <Image width={115} height={40} src={IMAGES.logo} alt="logo" priority />
       </div>
       <DropdownMenu>
-        <DropdownMenuTrigger className="outline-none">
+        <DropdownMenuTrigger className="rounded-md p-1.5 hover:bg-gray-100 data-[state=open]:bg-gray-100">
           <div className="flex items-center gap-2">
             <div className="size-10">
               <ICONS.profile />
@@ -29,7 +29,7 @@ const Header = () => {
             </div>
           </div>
         </DropdownMenuTrigger>
-        <DropdownMenuContent className="mr-3 mt-2 w-96 rounded-lg">
+        <DropdownMenuContent className="mr-3 w-96 rounded-lg">
           <div className="flex items-center justify-start gap-4 p-3">
             <div className="flex size-14 items-center justify-center rounded-full border border-primary">
               <p className="text-2xl text-primary">DC</p>
