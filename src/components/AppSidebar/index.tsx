@@ -121,7 +121,7 @@ export function AppSidebar() {
                           <SidebarMenuSubButton
                             isActive={isActive(submenu.url)}
                             onClick={() => router.push(submenu.url)}
-                            className="pointer-events-auto h-11 cursor-pointer rounded-sm bg-transparent px-8 before:absolute before:left-3 before:w-2 before:rounded-full before:bg-white hover:bg-primary-dark hover:text-white active:bg-transparent active:text-white data-[active=true]:bg-primary-dark data-[active=true]:font-semibold data-[active=true]:text-white data-[active=true]:before:h-2"
+                            className="pointer-events-auto h-11 cursor-pointer rounded-sm bg-transparent pl-8 before:absolute before:left-3 before:w-2 before:rounded-full before:bg-white hover:bg-primary-dark hover:text-white active:bg-transparent active:text-white data-[active=true]:bg-primary-dark data-[active=true]:font-semibold data-[active=true]:text-white data-[active=true]:before:h-2"
                           >
                             <span className="text-base uppercase">{submenu.title}</span>
                           </SidebarMenuSubButton>

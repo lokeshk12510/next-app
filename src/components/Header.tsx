@@ -13,9 +13,9 @@ import { Button } from './ui/button';
 
 const Header = () => {
   return (
-    <div className="flex h-16 items-center justify-between border-b border-gray-200 bg-white px-4 text-primary">
+    <div className="flex h-16 items-center justify-between border-b border-gray-200 bg-card px-4 text-primary">
       <div>
-        <Image width={115} height={40} src={IMAGES.logo} alt="logo" priority />
+        <Image width={115} height={40} src={IMAGES.Logo} alt="logo" priority />
       </div>
       <DropdownMenu>
         <DropdownMenuTrigger className="rounded-md p-1.5 hover:bg-gray-100 data-[state=open]:bg-gray-100">

@@ -4,7 +4,7 @@ import { Separator } from './ui/separator';
 
 const SubHeader = ({ title }: { title: string }) => {
   return (
-    <div className="sticky top-0 z-10 flex h-14 items-center justify-start gap-4 border-b border-gray-200 bg-white px-4 text-primary">
+    <div className="sticky top-0 z-10 flex h-14 items-center justify-start gap-4 border-b border-gray-200 bg-card px-4 text-primary">
       <SidebarTrigger
         variant={'outline'}
         size="icon"
