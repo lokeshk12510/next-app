@@ -1,17 +1,21 @@
-import DashboardIcon from '@/assets/icons/dashboard.svg';
-import ManagementIcon from '@/assets/icons/management.svg';
-import ReportHistoryIcon from '@/assets/icons/report-history.svg';
-import ReportsIcon from '@/assets/icons/reports.svg';
-import SchedulerIcon from '@/assets/icons/scheduler.svg';
-import GenerateReportIcon from '@/assets/icons/generate-report.svg';
-import ProfileIcon from '@/assets/icons/profile.svg'
+import dashboard from '@/assets/icons/dashboard.svg';
+import management from '@/assets/icons/management.svg';
+import reportHistory from '@/assets/icons/report-history.svg';
+import reports from '@/assets/icons/reports.svg';
+import scheduler from '@/assets/icons/scheduler.svg';
+import generateReport from '@/assets/icons/generate-report.svg';
+import profile from '@/assets/icons/profile.svg';
+import user from '@/assets/icons/user.svg';
+import password from '@/assets/icons/password.svg';
 
 export const ICONS = {
-  dashboard: DashboardIcon,
-  management: ManagementIcon,
-  reports: ReportsIcon,
-  scheduler: SchedulerIcon,
-  generateReport: GenerateReportIcon,
-  reportHistory: ReportHistoryIcon,
-  profile:ProfileIcon
+  dashboard,
+  management,
+  reports,
+  scheduler,
+  generateReport,
+  reportHistory,
+  profile,
+  user,
+  password,
 } as const;

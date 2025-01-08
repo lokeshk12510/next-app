@@ -10,6 +10,7 @@ import {
   DropdownMenuTrigger,
 } from './ui/dropdown-menu';
 import { Button } from './ui/button';
+import Link from 'next/link';
 
 const Header = () => {
   return (
@@ -66,7 +67,9 @@ const Header = () => {
                 <p className="text-base text-gray-700">+61 0434 545 454</p>
               </div>
               <DropdownMenuItem asChild>
-                <Button className="mt-2 h-10 w-full cursor-pointer">SIGN OUT</Button>
+                <Button className="mt-2 h-10 w-full cursor-pointer" asChild>
+                  <Link href="/">Sign out</Link>
+                </Button>
               </DropdownMenuItem>
             </div>
           </div>

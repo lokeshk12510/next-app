@@ -1,5 +1,6 @@
 'use client';
 
+import SkeletonLoader from '@/components/Skeleton-loader';
 import { useRouter } from 'next/navigation';
 import React, { useEffect } from 'react';
 
@@ -16,7 +17,7 @@ const Protected = ({ children }: { children: React.ReactNode }) => {
   }, [router]);
 
   if (loader) {
-    return <div>Loading...</div>;
+    return <SkeletonLoader />;
   }
 
   return <div>{children}</div>;

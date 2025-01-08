@@ -14,6 +14,7 @@
     --primary-foreground: 0 85.7% 97.3%;
     --primary-dark: 359, 82%, 34%;
     --primary-light: 360, 100%, 97%;
+    --primary-lighter: 0, 100%, 99.5%;
     --secondary: 0, 100%, 74%;
     --secondary-foreground: 0 0% 100%;
     --muted: 0 0% 96.1%;
@@ -31,6 +32,7 @@
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
+    --label-primary: 220, 6%, 33%;
 
     --sidebar-background: var(--primary);
     --sidebar-foreground: 0 0% 86%;
@@ -53,6 +55,7 @@
     --primary-foreground: 0 85.7% 97.3%;
     --primary-dark: 0, 100%, 13%;
     --primary-light: 360, 100%, 97%;
+    --primary-lighter: 0, 100%, 100%, 1;
     --secondary: 0, 100%, 74%;
     --secondary-foreground: 0 0% 100%;
     --muted: 0 0% 14.9%;
@@ -69,6 +72,7 @@
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
+    --label-primary: 220, 6%, 33%;
 
     --sidebar-background: 10 3% 0%;
     --sidebar-foreground: 0 0% 86%;

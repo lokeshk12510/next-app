@@ -25,6 +25,7 @@ export default {
           foreground: 'hsl(var(--primary-foreground))',
           dark: 'hsl(var(--primary-dark))',
           light: 'hsl(var(--primary-light))',
+          lighter: 'hsl(var(--primary-lighter))',
         },
         secondary: {
           DEFAULT: 'hsl(var(--secondary))',
@@ -51,6 +52,9 @@ export default {
           '3': 'hsl(var(--chart-3))',
           '4': 'hsl(var(--chart-4))',
           '5': 'hsl(var(--chart-5))',
+        },
+        label: {
+          primary: 'hsl(var(--label-primary))',
         },
         sidebar: {
           DEFAULT: 'hsl(var(--sidebar-background))',
