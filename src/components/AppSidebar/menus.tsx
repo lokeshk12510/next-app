@@ -1,17 +1,15 @@
-import ICONS from '@/config/icons';
-
 // Sidebar Menu items.
 
 const SIDEBAR_MENUS = [
   {
     title: 'Dashboard',
     url: '/dashboard',
-    icon: ICONS.dashboard,
+    icon: 'dashboard',
   },
   {
     title: 'Management',
     url: '/management',
-    icon: ICONS.management,
+    icon: 'management',
     submenus: [
       {
         title: 'User Management',
@@ -34,22 +32,22 @@ const SIDEBAR_MENUS = [
   {
     title: 'Scheduler',
     url: '/scheduler',
-    icon: ICONS.scheduler,
+    icon: 'scheduler',
   },
   {
     title: 'Reports',
     url: '/reports',
-    icon: ICONS.reports,
+    icon: 'reports',
   },
   {
     title: 'Generate Report',
     url: '/generate-report',
-    icon: ICONS.generateReport,
+    icon: 'generateReport',
   },
   {
     title: 'Report History',
     url: '/report-history',
-    icon: ICONS.reportHistory,
+    icon: 'reportHistory',
   },
 ];
 

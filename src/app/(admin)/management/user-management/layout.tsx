@@ -8,6 +8,7 @@ import SubHeader from '@/components/SubHeader';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 import URLS from '@/config/urls';
+import { FormDialogProvider } from '@/components/FormDialog';
 
 const userMgt = URLS.management.userManagement;
 
@@ -44,7 +45,11 @@ const UserManagementLayout = ({ children }: { children: React.ReactNode }) => {
             </TabsTrigger>
           ))}
         </TabsList>
-        {tabValue && <TabsContent value={tabValue}>{children}</TabsContent>}
+        {tabValue && (
+          <TabsContent value={tabValue}>
+            <FormDialogProvider>{children}</FormDialogProvider>
+          </TabsContent>
+        )}
       </Tabs>
     </div>
   );

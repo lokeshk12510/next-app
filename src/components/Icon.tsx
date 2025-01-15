@@ -22,11 +22,7 @@ const Icon = ({ iconName, className }: IconProps) => {
     return null;
   }
 
-  return (
-    <div className={cn('size-6 text-primary', className)}>
-      <IconComponent />
-    </div>
-  );
+  return <IconComponent className={cn('size-6 text-inherit', className)} />;
 };
 
 export default Icon;

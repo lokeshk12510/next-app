@@ -16,7 +16,7 @@ import Icon from './Icon';
 
 const Header = () => {
   return (
-    <div className="flex h-16 items-center justify-between border-b border-gray-200 bg-card px-4 text-primary">
+    <div className="flex h-16 items-center justify-between border-b border-border bg-card px-4 text-primary">
       <div>
         <Image width={115} height={40} src={IMAGES.Logo} alt="logo" priority />
       </div>

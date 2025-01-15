@@ -15,8 +15,13 @@ const URLS = {
       equipments: '/management/asset-management/equipments',
       assetTypes: '/management/asset-management/assetTypes',
     },
-    scheduler: '/scheduler',
   },
+  scheduler: '/scheduler',
+  reports: {
+    root: '/reports',
+  },
+  generateReport: '/generate-report',
+  reportHistory: '/report-history',
 };
 
 export default URLS;

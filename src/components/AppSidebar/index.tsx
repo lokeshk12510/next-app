@@ -17,6 +17,8 @@ import {
 } from '@/components/ui/sidebar';
 
 import SIDEBAR_MENUS from './menus';
+import Icon from '../Icon';
+import ICONS from '@/config/icons';
 
 export function AppSidebar() {
   const pathname = usePathname();
@@ -45,18 +47,20 @@ export function AppSidebar() {
                   >
                     {item.submenus ? (
                       <>
-                        <div className="size-5 max-w-7 group-data-[collapsible=icon]:size-full">
-                          <item.icon />
-                        </div>
+                        <Icon
+                          iconName={item.icon as keyof typeof ICONS}
+                          className="size-5 max-w-7 group-data-[collapsible=icon]:size-full"
+                        />
                         <span className="text-base uppercase group-data-[collapsible=icon]:hidden">
                           {item.title}
                         </span>
                       </>
                     ) : (
                       <Link href={item.url}>
-                        <div className="size-5 max-w-7 group-data-[collapsible=icon]:size-full">
-                          <item.icon />
-                        </div>
+                        <Icon
+                          iconName={item.icon as keyof typeof ICONS}
+                          className="size-5 max-w-7 group-data-[collapsible=icon]:size-full"
+                        />
                         <span className="text-base uppercase group-data-[collapsible=icon]:hidden">
                           {item.title}
                         </span>
