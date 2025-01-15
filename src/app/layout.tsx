@@ -1,19 +1,14 @@
 import '@/styles/globalStyles.css';
-
-import Head from 'next/head';
 import { ThemeProvider } from '@/components/ThemeProvider';
+import { Metadata } from 'next';
 
-export const metadata = {
-  title: 'My App',
-  description: 'An amazing application built with Next.js',
+export const metadata: Metadata = {
+  title: 'My Page Title',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <Head>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       <body>
         <ThemeProvider
           attribute="class"
@@ -21,7 +16,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <div>{children}</div>
         </ThemeProvider>
       </body>
     </html>

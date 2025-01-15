@@ -1,7 +1,9 @@
-import { ICONS } from '@/config/icons';
-import IMAGES from '@/config/images';
-import Image from 'next/image';
 import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+
+import IMAGES from '@/config/images';
+
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -10,7 +12,7 @@ import {
   DropdownMenuTrigger,
 } from './ui/dropdown-menu';
 import { Button } from './ui/button';
-import Link from 'next/link';
+import Icon from './Icon';
 
 const Header = () => {
   return (
@@ -21,9 +23,7 @@ const Header = () => {
       <DropdownMenu>
         <DropdownMenuTrigger className="rounded-md p-1.5 hover:bg-gray-100 data-[state=open]:bg-gray-100">
           <div className="flex items-center gap-2">
-            <div className="size-10">
-              <ICONS.profile />
-            </div>
+            <Icon iconName="profile" className="size-10" />
             <div className="flex flex-col items-start">
               <p className="text-base font-medium">DAVID CROTTY</p>
               <p className="text-[12px]">ADMIN</p>

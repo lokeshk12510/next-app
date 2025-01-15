@@ -1,11 +1,21 @@
 import React from 'react';
-import { ICONS } from '@/config/icons';
+
+import ICONS from '@/config/icons';
+import { cn } from '@/lib/utils';
 
 interface IconProps {
   iconName: keyof typeof ICONS;
+  className?: string;
 }
 
-const Icon = ({ iconName }: IconProps) => {
+/**
+ * Icon is used to render local svg icons
+ *
+ * @param iconName ICONS object key to select local icon
+ * @returns React.JSX.Element | null
+ */
+
+const Icon = ({ iconName, className }: IconProps) => {
   const IconComponent = ICONS[iconName];
 
   if (!IconComponent) {
@@ -13,7 +23,7 @@ const Icon = ({ iconName }: IconProps) => {
   }
 
   return (
-    <div className="size-6 text-primary">
+    <div className={cn('size-6 text-primary', className)}>
       <IconComponent />
     </div>
   );

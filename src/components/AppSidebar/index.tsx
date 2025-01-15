@@ -1,5 +1,8 @@
 'use client';
 
+import { usePathname, useRouter } from 'next/navigation';
+import Link from 'next/link';
+
 import {
   Sidebar,
   SidebarContent,
@@ -12,68 +15,14 @@ import {
   SidebarMenuSubButton,
   SidebarMenuSubItem,
 } from '@/components/ui/sidebar';
-import { ICONS } from '@/config/icons';
-import { usePathname, useRouter } from 'next/navigation';
-import Link from 'next/link';
 
-// Menu items.
-const items = [
-  {
-    title: 'Dashboard',
-    url: '/dashboard',
-    icon: ICONS.dashboard,
-  },
-  {
-    title: 'Management',
-    url: '/management',
-    icon: ICONS.management,
-    submenus: [
-      {
-        title: 'User Management',
-        url: '/management/user-management',
-      },
-      {
-        title: 'Asset Management',
-        url: '/management/asset-management',
-      },
-      {
-        title: 'Template Management',
-        url: '/management/template-management',
-      },
-      {
-        title: 'Report Management',
-        url: '/management/report-management',
-      },
-    ],
-  },
-  {
-    title: 'Scheduler',
-    url: '/scheduler',
-    icon: ICONS.scheduler,
-  },
-  {
-    title: 'Reports',
-    url: '/reports',
-    icon: ICONS.reports,
-  },
-  {
-    title: 'Generate Report',
-    url: '/generate-report',
-    icon: ICONS.generateReport,
-  },
-  {
-    title: 'Report History',
-    url: '/report-history',
-    icon: ICONS.reportHistory,
-  },
-];
+import SIDEBAR_MENUS from './menus';
 
 export function AppSidebar() {
   const pathname = usePathname();
-
   const router = useRouter();
 
-  const isActive = (path: string) => pathname === path;
+  const isActive = (path: string) => pathname.includes(path);
   const isParentActive = (parentPath: string) =>
     pathname.startsWith(parentPath) && parentPath !== pathname;
 
@@ -83,10 +32,10 @@ export function AppSidebar() {
         <SidebarGroup>
           <SidebarGroupContent>
             <SidebarMenu className="gap-2.5">
-              {items.map(item => (
+              {SIDEBAR_MENUS.map(item => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton
-                    className="h-11 gap-2.5 rounded-sm px-4 hover:bg-primary-dark hover:text-white active:bg-transparent active:text-white data-[active=true]:shadow-md group-data-[collapsible=icon]:!size-11 group-data-[collapsible=icon]:justify-center"
+                    className="h-11 gap-2.5 rounded-sm px-4 hover:bg-sidebar-hover hover:text-white active:bg-transparent active:text-white data-[active=true]:shadow-md group-data-[collapsible=icon]:!size-11 group-data-[collapsible=icon]:justify-center"
                     isActive={item.submenus ? isParentActive(item.url) : isActive(item.url)}
                     asChild={!Boolean(item.submenus)}
                     onClick={() =>
@@ -121,7 +70,7 @@ export function AppSidebar() {
                           <SidebarMenuSubButton
                             isActive={isActive(submenu.url)}
                             onClick={() => router.push(submenu.url)}
-                            className="pointer-events-auto h-11 cursor-pointer rounded-sm bg-transparent pl-8 before:absolute before:left-3 before:w-2 before:rounded-full before:bg-white hover:bg-primary-dark hover:text-white active:bg-transparent active:text-white data-[active=true]:bg-primary-dark data-[active=true]:font-semibold data-[active=true]:text-white data-[active=true]:before:h-2"
+                            className="pointer-events-auto h-11 cursor-pointer rounded-sm bg-transparent pl-8 before:absolute before:left-3 before:w-2 before:rounded-full before:bg-white hover:bg-sidebar-hover hover:text-white active:bg-transparent active:text-white data-[active=true]:bg-sidebar-hover data-[active=true]:font-semibold data-[active=true]:text-white data-[active=true]:before:h-2"
                           >
                             <span className="text-base uppercase">{submenu.title}</span>
                           </SidebarMenuSubButton>

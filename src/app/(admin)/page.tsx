@@ -1,8 +1,12 @@
 import SkeletonLoader from '@/components/Skeleton-loader';
 import React from 'react';
 
-export const Root = () => {
-  return <SkeletonLoader />;
+const Root = () => {
+  return (
+    <div>
+      <SkeletonLoader />
+    </div>
+  );
 };
 
 export default Root;

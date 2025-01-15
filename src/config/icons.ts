@@ -8,7 +8,7 @@ import profile from '@/assets/icons/profile.svg';
 import user from '@/assets/icons/user.svg';
 import password from '@/assets/icons/password.svg';
 
-export const ICONS = {
+const ICONS = {
   dashboard,
   management,
   reports,
@@ -18,4 +18,6 @@ export const ICONS = {
   profile,
   user,
   password,
-} as const;
+};
+
+export default ICONS;

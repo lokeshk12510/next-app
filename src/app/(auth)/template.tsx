@@ -1,6 +1,6 @@
 import React from 'react';
-import Image from 'next/image';
 
+import Image from 'next/image';
 import IMAGES from '@/config/images';
 
 const AuthTemplate = ({ children }: { children: React.ReactNode }) => {

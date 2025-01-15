@@ -1,12 +1,12 @@
-import SubHeader from '@/components/SubHeader';
+import { Loader } from 'lucide-react';
 import React from 'react';
 
-const User = () => {
+const UserManagement = () => {
   return (
-    <div>
-      <SubHeader title="User Management" />
+    <div className="box-center">
+      <Loader />
     </div>
   );
 };
 
-export default User;
+export default UserManagement;
