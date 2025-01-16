@@ -37,6 +37,8 @@ export function UserForm() {
   });
 
   function onSubmit(data: z.infer<typeof FormSchema>) {
+    console.log(data);
+    handleDialogToggle();
     toast({
       title: 'You submitted the following values:',
       description: (
@@ -47,18 +49,14 @@ export function UserForm() {
     });
   }
 
-  const { setOpen } = useFormDialog();
-
-  const handleDialog = () => {
-    setOpen(false);
-  };
+  const { handleDialogToggle } = useFormDialog();
 
   return (
     <div className="w-[500px]">
       <SheetHeader className="header-gradient flex flex-row items-center justify-between border-b border-primary p-3">
         <SheetTitle>Create User</SheetTitle>
 
-        <Button variant="outline" size="icon" onClick={handleDialog}>
+        <Button variant="outline" size="icon" onClick={handleDialogToggle}>
           <X />
         </Button>
       </SheetHeader>
@@ -93,7 +91,7 @@ export function UserForm() {
             />
             <div className="mt-3 flex items-center justify-evenly gap-3 [&_button]:w-full [&_button]:rounded-lg [&_button]:uppercase">
               <Button type="submit">Add</Button>
-              <Button type="button" variant={'outline'} onClick={handleDialog}>
+              <Button type="button" variant={'outline'} onClick={handleDialogToggle}>
                 Cancel
               </Button>
             </div>

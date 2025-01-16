@@ -1,9 +1,10 @@
 import '@/styles/globalStyles.css';
 
+import { Metadata } from 'next';
 import { Poppins } from 'next/font/google';
 
 import { ThemeProvider } from '@/components/ThemeProvider';
-import { Metadata } from 'next';
+import { Toaster } from '@/components/ui/toaster';
 
 const poppins = Poppins({
   weight: '400',
@@ -27,6 +28,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           disableTransitionOnChange
         >
           <div>{children}</div>
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>

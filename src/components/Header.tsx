@@ -31,7 +31,7 @@ const Header = () => {
           </div>
         </DropdownMenuTrigger>
         <DropdownMenuContent className="mr-3 w-96 rounded-lg">
-          <div className="flex items-center justify-start gap-4 p-3">
+          <div className="header-gradient flex items-center justify-start gap-4 p-3">
             <div className="flex size-14 items-center justify-center rounded-full border border-primary">
               <p className="text-2xl text-primary">DC</p>
             </div>

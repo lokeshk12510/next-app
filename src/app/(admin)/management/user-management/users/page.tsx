@@ -1,44 +1,17 @@
-import { Input } from '@/components/ui/input';
-import { Search } from 'lucide-react';
 import React from 'react';
-import { DataTable } from './table';
-import { columns, Payment } from './columns';
-import { UserForm } from './form';
-import { FormDialog } from '@/components/FormDialog';
-import CreateBtn from './CreateBtn';
+import { Search } from 'lucide-react';
 
-async function getData(): Promise<Payment[]> {
-  // Fetch data from your API here.
-  return [
-    {
-      id: '728ed52f',
-      amount: 100,
-      status: 'pending',
-      email: 'm@example.com',
-    },
-    {
-      id: '728edsdf',
-      amount: 200,
-      status: 'success',
-      email: 'm2@example.com',
-    },
-    {
-      id: '728ed5sdf',
-      amount: 300,
-      status: 'success',
-      email: 'm3@example.com',
-    },
-  ];
-}
+import { Input } from '@/components/ui/input';
+import { FormDialog } from '@/components/FormDialog';
+
+import { UserForm } from './form';
+import CreateBtn from './CreateBtn';
+import { DataTableDemo } from './DataTable';
 
 const Users = async () => {
-  const data = await getData();
-
-  console.log('rendered');
-
   return (
     <div>
-      <div className="title flex items-start justify-between p-1">
+      <div className="title mb-2 flex items-start justify-between p-1">
         <div className="flex">
           <h1 className="text-base font-semibold uppercase">Users</h1>
         </div>
@@ -54,7 +27,7 @@ const Users = async () => {
         </div>
       </div>
 
-      <DataTable data={data} columns={columns} />
+      <DataTableDemo />
 
       <FormDialog>
         <UserForm />

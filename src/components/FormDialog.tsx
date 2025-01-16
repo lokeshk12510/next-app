@@ -5,8 +5,10 @@ import { Sheet, SheetContent, SheetTitle } from './ui/sheet';
 
 type FormDialogContext = {
   open: boolean;
-  setOpen: (open: boolean) => void;
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
   formData?: object;
+  setFormData: React.Dispatch<React.SetStateAction<object | undefined>>;
+  handleDialogToggle: (data?: object) => void;
 };
 
 const FormDialogContext = React.createContext<FormDialogContext | null>(null);
@@ -26,12 +28,18 @@ const FormDialogProvider = React.forwardRef<HTMLDivElement, React.ComponentProps
     const [open, setOpen] = useState(false);
     const [formData, setFormData] = useState<object | undefined>(undefined);
 
+    const handleDialogToggle = (data?: object) => {
+      setOpen(o => !o);
+      if (data) setFormData(data);
+    };
+
     const contextValue = React.useMemo<FormDialogContext>(
       () => ({
         open,
         setOpen,
         formData,
         setFormData,
+        handleDialogToggle,
       }),
       [formData, open],
     );

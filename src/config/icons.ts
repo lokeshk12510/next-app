@@ -7,6 +7,10 @@ import generateReport from '@/assets/icons/generate-report.svg';
 import profile from '@/assets/icons/profile.svg';
 import user from '@/assets/icons/user.svg';
 import password from '@/assets/icons/password.svg';
+import edit from '@/assets/icons/edit.svg';
+import trash from '@/assets/icons/delete.svg';
+import addUser from '@/assets/icons/add-user.svg';
+import lock from '@/assets/icons/lock.svg';
 
 const ICONS = {
   dashboard,
@@ -18,6 +22,10 @@ const ICONS = {
   profile,
   user,
   password,
+  edit,
+  trash,
+  addUser,
+  lock,
 };
 
 export default ICONS;
